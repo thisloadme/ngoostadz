@@ -1,0 +1,30 @@
+{
+    "functions": {
+        "api/chat.go": {
+            "runtime": "go1.x",
+            "handler": "ChatHandler"
+        },
+        "api/quote.go": {
+            "runtime": "go1.x",
+            "handler": "QuoteHandler"
+        },
+        "api/hadith.go": {
+            "runtime": "go1.x",
+            "handler": "HadithHandler"
+        }
+    },
+    "routes": [
+        {
+            "src": "/api/chat",
+            "dest": "api/chat.go"
+        },
+        {
+            "src": "/api/quote",
+            "dest": "api/quote.go"
+        },
+        {
+            "src": "/api/hadith",
+            "dest": "api/hadith.go"
+        }
+    ]
+}
