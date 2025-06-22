@@ -1,15 +1,4 @@
 {
-    "functions": {
-        "api/chat.go": {
-            "runtime": "go1.x"
-        },
-        "api/quote.go": {
-            "runtime": "go1.x"
-        },
-        "api/hadith.go": {
-            "runtime": "go1.x"
-        }
-    },
     "routes": [
         {
             "src": "/api/chat",
