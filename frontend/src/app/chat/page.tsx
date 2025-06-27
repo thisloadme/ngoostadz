@@ -241,7 +241,7 @@ export default function ChatPage() {
                   <textarea
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder={isLimitReached() ? "Reset percakapan untuk melanjutkan..." : "Tulis pertanyaanmu..."}
+                    placeholder={isLimitReached() ? "Reset percakapan untuk melanjutkan..." : "Tulis disini..."}
                     className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800 border-slate-700 text-slate-100 placeholder-slate-400 resize-none overflow-y-auto disabled:opacity-50"
                     disabled={isLoading || isLimitReached()}
                     rows={1}
@@ -253,6 +253,15 @@ export default function ChatPage() {
                     style={{
                       minHeight: '40px',
                       maxHeight: '80px'
+                    }}
+                    onKeyDown={(e) => {
+                      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                        e.preventDefault();
+                        const form = (e.target as HTMLElement).closest('form');
+                        if (form) {
+                          (form as HTMLFormElement).requestSubmit();
+                        }
+                      }
                     }}
                   />
                   <button
