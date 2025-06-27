@@ -16,7 +16,7 @@ type QuoteResponse struct {
 	Quote string `json:"quote"`
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func QuoteHandler(w http.ResponseWriter, r *http.Request) {
 	// Set CORS headers
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
